@@ -1,0 +1,279 @@
+body {
+  background-color: #1a756b;
+  text-align: center;
+}
+
+/* Main- heading */
+h1 {
+  color: #00ffc8;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3.5rem;
+  margin: 5% 5% 2.5%;
+}
+
+/* Heading when it is player1's turn */
+.player1 {
+  color: #a4bd2a;
+}
+
+/* Heading when it is player2's turn */
+.player2 {
+  color: #717cd1;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 5% auto auto;
+  width: 37.5%;
+}
+
+/* Making the table responsive */
+@media screen and (max-width: 1100px) {
+  table {
+    width: 90%;
+  }
+}
+
+/* hide table when the page loads */
+.hide {
+  display: none;
+}
+
+/* Making a tictactoe board by removing these borders from the table */
+#zero, #one, #two {
+  border-top: none;
+}
+
+#zero, #three, #six {
+  border-left: none;
+}
+
+#six, #seven, #eight {
+  border-bottom: none;
+}
+
+#two, #five, #eight {
+  border-right: none;
+}
+
+/* Each cell in table */
+td {
+  border: 5px solid #fff;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 125px;
+  height: 150px;
+  padding-top: 10px;
+  position: relative;
+  width: 33%;
+}
+
+/* cursor when Mouseover on empty square */
+.cursor {
+  cursor: pointer;
+}
+
+/* cursor when Mouseover on filled square */
+.cursorNotAllowed {
+  cursor: not-allowed;
+}
+
+/* Animation when either player wins */
+.blink-bg {
+		animation: blinkingBackground 1s 2;
+}
+
+@keyframes blinkingBackground{
+		0%		{ background-color: #995555; color: #fff; text-shadow: 1px 1px 3px red;}
+    25%	{ background-color: #000; color: red; text-shadow: 1px 1px 3px black;}
+    50%   { background-color: #995555; color: #fff; text-shadow: 1px 1px 3px red;}
+    75%	{ background-color: #000; color: red; text-shadow: 1px 1px 3px black;}
+		100%	{ background-color: #995555; color: #fff; text-shadow: 1px 1px 3px red;}
+}
+
+/* Styling the win pattern */
+.win-bg {
+  background-color: #995555;
+  color: #ebbcc2;
+  text-shadow: 2px 2px black;
+}
+
+/* style of the square when player1 clicks on it in his turn */
+.player1Mouse {
+  background-color: #ccc208;
+  color: green;
+}
+
+/* style of the square when player2 clicks on it in his turn */
+.player2Mouse {
+  background-color: #09d6cf;
+  color: purple;
+}
+
+/* style when mouseOver on a square */
+.currentSquare {
+  background-color: #234567;
+  color: rgba(245, 147, 66, 0.8);
+}
+
+/* styling the outer div */
+ul {
+  font-size: 2rem;
+  font-weight: 100;
+  /* margin-left: 10%; */
+  text-align: left;
+  width: 30%;
+  /* display: none; */
+  position: absolute;
+  /* left: 10%; */
+  top: 40%;
+}
+
+/* list items */
+li {
+  color: #d998bf;
+  font-family: 'Tenali Ramakrishna', sans-serif;
+  list-style-type: none;
+}
+
+/* custom bullets */
+ul li::before {
+  color: #74b8cf;
+  content: "> ";
+  margin-left: -1em;
+  width: 1rem;
+}
+
+/* highlight important keys */
+span {
+  color: white;
+}
+
+button:hover {
+  background-color: #94dde0;
+  color: #2c9599;
+  cursor: pointer;
+}
+
+.red {
+  color: red;
+}
+
+button {
+  background-color: #c8e6aa;
+  border: 2px solid black;
+  border-radius: 50%;
+  color: green;
+  font-size: 20px;
+  padding: 20px;
+  margin: 2.5% 1% 5%;
+}
+
+.hide button {
+  position: absolute;
+}
+
+.newGame {
+  left: 10%;
+  top: 35%;
+}
+
+.reload {
+  right: 10%;
+  top: 35%;
+}
+
+@media screen and (max-width: 1100px) {
+  .newGame {
+    left: 10%;
+    top: 80%;
+  }
+
+  .reload {
+    right: 10%;
+    top: 80%;
+  }
+}
+
+img {
+  width: 30%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  
+  border-left: 5px solid #fcc000;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #333333;
+  color: #fcc000;
+  font-family: 'Lato', sans-serif;
+}
+
+.modal-body {
+  text-align: left;
+  padding: 2px 16px;
+  background-color: #333333;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #333333;
+  color: #fcc000;
+  font-family: 'Lato', sans-serif;
+}
